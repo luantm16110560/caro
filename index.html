@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="./static/js/vue.js"></script>
+    <link rel="stylesheet" href="./static/css/css.css">
+</head>
+<body>
+    <div id="app" class="center">
+        <span>
+            Turn of
+            <strong><span v-if="isTurnX" class="turn_label red">x</span><span class="turn_label green"v-else>o</span></strong>
+        </span>
+       
+        <!-- <input type="number" disabled="true"> -->
+        <br />
+        <div :style="{ 'margin-left': 50 + '%'}"><button @click="reset">Reset</button></div>
+        <!-- <ul class="panel-history">
+            <li v-for="his in histories"><span class="history-item">Player {{ his }}</span></li>
+        </ul> -->
+        <div v-for="(r, row) in matrix" :key="row" class="flex-container">
+            <button :disabled="matrix[row][col] !== -1 || hasPlayerWon" class="square" v-for="(c, col) in matrix" :key="col"  :style="[hasPlayerWon ? {backgroundColor: '#dcdce8',border: 'solid white 0.2px'} : {backgroundColor: 'white'}]"
+                @click="selectButton(row, col)">
+                <span v-if="matrix[row][col] == 1" class="red text-player">x</span>
+                <span v-else-if="matrix[row][col] == 0" class="green text-player">o</span>
+            </button>
+        </div>
+        
+        <!-- {{ matrix }} -->
+    </div>
+</body>
+<script src="./static/js/app.js"></script>
+</html>

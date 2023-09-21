@@ -1,0 +1,42 @@
+.center {
+    text-align: center;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+}
+
+.square {
+    height: 30px;
+    width: 30px;
+    flex: 0 0 30px;
+    border: solid #a9bdde 0.2px;
+    
+}
+.text-player {
+    font-size: 20px;
+}
+.red {
+    color: red;
+}
+.green {
+    color: green;
+}
+
+.turn_label {
+    font-size: 20px;
+}
+.panel-history {
+    height: 595px;
+    min-width: 150px;
+    overflow-y: auto;
+    position: absolute;
+    right: 200px;
+    border: solid 1px red;
+}
+.panel-history li {
+    text-align: left ;
+    list-style-type: none;
+  }
+  
