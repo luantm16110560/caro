@@ -91,19 +91,6 @@ new Vue({
                     }
                 }
             }
-             // Kiểm tra đường chéo chính
-            for (let row = 0; row <= length - 5; row++) {
-                for (let col = 0; col <= length - 5; col++) {
-                    const player = matrix[row][col];
-                    if (player !== -1 &&
-                        player === matrix[row + 1][col + 1] &&
-                        player === matrix[row + 2][col + 2] &&
-                        player === matrix[row + 3][col + 3] &&
-                        player === matrix[row + 4][col + 4]) {
-                        return player;  // Người chơi player thắng
-                    }
-                }
-            }
             // Kiểm tra đường chéo phụ
             for (let row = 0; row <= length - 5; row++) {
                 for (let col = 4; col < length; col++) {
